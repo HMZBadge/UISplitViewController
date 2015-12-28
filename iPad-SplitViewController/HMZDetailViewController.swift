@@ -11,6 +11,17 @@ import UIKit
 
 class HMZDetailViewController: UITableViewController {
    
+    var foodType: HMZFoodType? {
+        didSet {
+            foods = HMZFood.foods(foodType?.idstr ?? "1")
+            title = foodType?.name
+            
+            tableView.reloadData()
+            if HMZCommon.share.isPad {
+                tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0), atScrollPosition: .Middle, animated: false)
+            }
+        }
+    }
     var foods: [HMZFood]? = HMZFood.foods("1")!
     
     override func viewDidLoad() {
@@ -18,7 +29,6 @@ class HMZDetailViewController: UITableViewController {
         title = "家常菜"
         //tableView.registerClass(HMZFoodViewCell.self, forCellReuseIdentifier: cellID)
         tableView.rowHeight = 100
-        
     }
 }
 
@@ -30,7 +40,7 @@ extension HMZDetailViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = HMZFoodViewCell.cellWithTableView(tableView)
         let v = UIView()
-        v.backgroundColor = UIColor.purpleColor()
+        v.backgroundColor = UIColor.blueColor()
         cell.selectedBackgroundView = v
         cell.food = foods?[indexPath.row]
         return cell
@@ -47,12 +57,7 @@ extension HMZDetailViewController {
 // MARK: - HMZMasterViewControllerDelegate
 extension HMZDetailViewController: HMZMasterViewControllerDelegate {
     func masterViewController(vc: HMZMasterViewController, didSelectedFoodType foodType: HMZFoodType) {
-        foods = HMZFood.foods(foodType.idstr ?? "1")
-        title = foodType.name
-        
-        tableView.reloadData()
-        tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0), atScrollPosition: .Middle, animated: false)
-
+        self.foodType = foodType
     }
 }
 
@@ -66,10 +71,28 @@ extension HMZDetailViewController: UISplitViewControllerDelegate {
         */
         if displayMode == .PrimaryHidden {
             self.navigationItem.leftBarButtonItem = svc.displayModeButtonItem()
+            UIView.beginAnimations(nil, context: nil)
+            UIView.setAnimationCurve(.EaseOut)
+            let frame = view.frame
+            view.frame = CGRect(x: frame.origin.x - 320, y: frame.origin.y, width: frame.size.width, height: frame.size.height)
+            UIView.commitAnimations()
         } else if displayMode == .AllVisible {
             self.navigationItem.leftBarButtonItem = nil
         } else if displayMode == .PrimaryOverlay {
-            print("hhhe")
+            /**
+            [UIView beginAnimations:nil context:nil];
+            [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+            if (_centerController.view.frame.origin.x == self.view.frame.origin.x || _centerController.view.frame.origin.x == 100) {
+            [_centerController.view setFrame:CGRectMake(_centerController.view.frame.origin.x-100, _centerController.view.frame.origin.y, _centerController.view.frame.size.width, _centerController.view.frame.size.height)];
+            } 
+            
+            [UIView commitAnimations];
+            */
+            UIView.beginAnimations(nil, context: nil)
+            UIView.setAnimationCurve(.EaseOut)
+            let frame = view.frame
+            view.frame = CGRect(x: frame.origin.x + 320, y: frame.origin.y, width: frame.size.width, height: frame.size.height)
+            UIView.commitAnimations()
         }
         
     }

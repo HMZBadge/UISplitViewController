@@ -26,7 +26,10 @@ class HMZWebViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "取消", style: .Plain, target: self, action: "back")
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", style: .Plain, target: self, action: "back")
+        let swipe = UISwipeGestureRecognizer(target: self, action: "back")
+        swipe.direction = .Right
+        self.view.addGestureRecognizer(swipe)
     }
     
     @objc private func back() {

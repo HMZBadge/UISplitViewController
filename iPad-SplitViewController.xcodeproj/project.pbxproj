@@ -31,7 +31,6 @@
 		DAD1488E1C315A60009BB1C2 /* HMZMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD1488D1C315A60009BB1C2 /* HMZMasterViewController.swift */; };
 		DAD148901C315ABF009BB1C2 /* HMZSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD1488F1C315ABF009BB1C2 /* HMZSplitViewController.swift */; };
 		DAD148921C315B74009BB1C2 /* HMZFoodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD148911C315B74009BB1C2 /* HMZFoodType.swift */; };
-		DAD148961C315E58009BB1C2 /* NSObject+CZ.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD148951C315E58009BB1C2 /* NSObject+CZ.m */; };
 		DAD148981C316E24009BB1C2 /* HMZDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD148971C316E24009BB1C2 /* HMZDetailViewController.swift */; };
 		DAD1489A1C316E40009BB1C2 /* HMZFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD148991C316E40009BB1C2 /* HMZFood.swift */; };
 		DAD1489D1C31726A009BB1C2 /* HMZFoodViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD1489B1C31726A009BB1C2 /* HMZFoodViewCell.swift */; };
@@ -54,6 +53,7 @@
 		DAD148D01C3174BC009BB1C2 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD148C01C3174BC009BB1C2 /* UIView+WebCacheOperation.m */; };
 		DAD148D41C318D6D009BB1C2 /* Html in Resources */ = {isa = PBXBuildFile; fileRef = DAD148D31C318D6D009BB1C2 /* Html */; };
 		DAD148D61C318E42009BB1C2 /* HMZWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD148D51C318E42009BB1C2 /* HMZWebViewController.swift */; };
+		DAD148D81C319A92009BB1C2 /* HMZCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD148D71C319A92009BB1C2 /* HMZCommon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,8 +84,6 @@
 		DAD1488D1C315A60009BB1C2 /* HMZMasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMZMasterViewController.swift; sourceTree = "<group>"; };
 		DAD1488F1C315ABF009BB1C2 /* HMZSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMZSplitViewController.swift; sourceTree = "<group>"; };
 		DAD148911C315B74009BB1C2 /* HMZFoodType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMZFoodType.swift; sourceTree = "<group>"; };
-		DAD148941C315E58009BB1C2 /* NSObject+CZ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CZ.h"; sourceTree = "<group>"; };
-		DAD148951C315E58009BB1C2 /* NSObject+CZ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CZ.m"; sourceTree = "<group>"; };
 		DAD148971C316E24009BB1C2 /* HMZDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMZDetailViewController.swift; sourceTree = "<group>"; };
 		DAD148991C316E40009BB1C2 /* HMZFood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMZFood.swift; sourceTree = "<group>"; };
 		DAD1489B1C31726A009BB1C2 /* HMZFoodViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMZFoodViewCell.swift; sourceTree = "<group>"; };
@@ -125,6 +123,7 @@
 		DAD148C01C3174BC009BB1C2 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		DAD148D31C318D6D009BB1C2 /* Html */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Html; sourceTree = "<group>"; };
 		DAD148D51C318E42009BB1C2 /* HMZWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMZWebViewController.swift; sourceTree = "<group>"; };
+		DAD148D71C319A92009BB1C2 /* HMZCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMZCommon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,8 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				DAD1489F1C3174BC009BB1C2 /* SDWebImage */,
-				DAD148941C315E58009BB1C2 /* NSObject+CZ.h */,
-				DAD148951C315E58009BB1C2 /* NSObject+CZ.m */,
+				DAD148D71C319A92009BB1C2 /* HMZCommon.swift */,
 			);
 			name = Lib;
 			sourceTree = "<group>";
@@ -371,6 +369,7 @@
 				DAD148C81C3174BC009BB1C2 /* SDWebImageManager.m in Sources */,
 				DAD148C21C3174BC009BB1C2 /* NSData+ImageContentType.m in Sources */,
 				DAD148C41C3174BC009BB1C2 /* SDWebImageCompat.m in Sources */,
+				DAD148D81C319A92009BB1C2 /* HMZCommon.swift in Sources */,
 				DAD148D01C3174BC009BB1C2 /* UIView+WebCacheOperation.m in Sources */,
 				DAD148CD1C3174BC009BB1C2 /* UIImage+WebP.m in Sources */,
 				DA7DAD881C31195500C266A7 /* AppDelegate.swift in Sources */,
@@ -380,7 +379,6 @@
 				DAD148CA1C3174BC009BB1C2 /* UIButton+WebCache.m in Sources */,
 				DAD148C91C3174BC009BB1C2 /* SDWebImagePrefetcher.m in Sources */,
 				DAD148C71C3174BC009BB1C2 /* SDWebImageDownloaderOperation.m in Sources */,
-				DAD148961C315E58009BB1C2 /* NSObject+CZ.m in Sources */,
 				DAD1488E1C315A60009BB1C2 /* HMZMasterViewController.swift in Sources */,
 				DAD148CC1C3174BC009BB1C2 /* UIImage+MultiFormat.m in Sources */,
 				DAD1489A1C316E40009BB1C2 /* HMZFood.swift in Sources */,

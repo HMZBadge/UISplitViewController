@@ -35,7 +35,9 @@ class HMZMasterViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        tableView.selectRowAtIndexPath(selectedIndexPath, animated: true, scrollPosition: .None)
+        if HMZCommon.share.isPad {
+            tableView.selectRowAtIndexPath(selectedIndexPath, animated: true, scrollPosition: .None)
+        }
     }
 }
 
@@ -56,9 +58,16 @@ extension HMZMasterViewController {
         if selectedIndexPath.item == indexPath.item {
             return
         }
-        print("只惦记了一次")
+
         selectedIndexPath = indexPath
         let foodType = foodTypes[indexPath.row]
-        foodTypeDelegate?.masterViewController?(self, didSelectedFoodType: foodType)
+        if HMZCommon.share.isPad {
+            foodTypeDelegate?.masterViewController?(self, didSelectedFoodType: foodType)
+        } else if HMZCommon.share.isPhone {
+            let detailVc = HMZDetailViewController()
+            detailVc.foodType = foodType
+            navigationController?.pushViewController(detailVc, animated: true)
+        }
+        
     }
 }
