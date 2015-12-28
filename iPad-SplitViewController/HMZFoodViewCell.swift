@@ -20,26 +20,28 @@ class HMZFoodViewCell: UITableViewCell {
     
     var food: HMZFood?{
         didSet{
-//            let url = NSURL(string: food?.imageUrl ?? "")
-//            if url != nil {
-//                iconView.sd_setImageWithURL(url!, placeholderImage: UIImage(named: "123"))
-//            }
-//            nameLabel.text = food?.name
-//            timeLabel.text = food?.time
-//            diffLabel.text = food?.diff
+            let url = NSURL(string: food?.imageUrl ?? "")
+            if url != nil {
+                iconView.sd_setImageWithURL(url!, placeholderImage: UIImage(named: "123"))
+            }
+            nameLabel.text = food?.name
+            timeLabel.text = "时间是: \(food?.time ?? "")"
+            diffLabel.text = "难易程度是: \(food?.diff ?? "")"
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        //为什么这里的控件没有初始化
-       
+        //为什么这里的控件没有初始化: 因为我没有正确加载XIB
+        
+        iconView.layer.cornerRadius = 40
+        iconView.layer.masksToBounds = true
     }
 
     class func cellWithTableView(tableView: UITableView) -> HMZFoodViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier(cellID) as? HMZFoodViewCell
         if cell == nil {
-            cell = NSBundle.mainBundle().loadNibNamed(cellID, owner: nil, options: nil).last as? HMZFoodViewCell
+            cell = NSBundle.mainBundle().loadNibNamed("HMZFoodViewCell", owner: nil, options: nil).last as? HMZFoodViewCell
         }
         return cell!
     }

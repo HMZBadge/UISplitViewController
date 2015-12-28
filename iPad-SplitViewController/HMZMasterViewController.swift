@@ -7,9 +7,15 @@
 //
 
 import UIKit
+@objc protocol HMZMasterViewControllerDelegate: NSObjectProtocol {
+    optional func masterViewController(vc: HMZMasterViewController, didSelectedFoodType foodType: HMZFoodType)
+}
 
 class HMZMasterViewController: UITableViewController {
     private let cellId = "FoodTypeID"
+    
+    var selectedIndexPath = NSIndexPath(forRow: 0, inSection: 0)
+    var foodTypeDelegate: HMZMasterViewControllerDelegate?
     var foodTypes:[HMZFoodType] = {
         var t = [HMZFoodType]()
         let path = NSBundle.mainBundle().pathForResource("food_types.plist", ofType: nil)!
@@ -29,7 +35,7 @@ class HMZMasterViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        tableView.selectRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0), animated: true, scrollPosition: .None)
+        tableView.selectRowAtIndexPath(selectedIndexPath, animated: true, scrollPosition: .None)
     }
 }
 
@@ -45,5 +51,14 @@ extension HMZMasterViewController {
         cell.textLabel?.textColor = UIColor.brownColor()
         cell.textLabel?.textAlignment = .Center
         return cell
+    }
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if selectedIndexPath.item == indexPath.item {
+            return
+        }
+        print("只惦记了一次")
+        selectedIndexPath = indexPath
+        let foodType = foodTypes[indexPath.row]
+        foodTypeDelegate?.masterViewController?(self, didSelectedFoodType: foodType)
     }
 }

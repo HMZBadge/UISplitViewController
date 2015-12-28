@@ -12,15 +12,11 @@ class HMZSplitViewController: UISplitViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        let masterVc = childViewControllers[0].childViewControllers[0] as? HMZMasterViewController
+        let detailVc = childViewControllers[1].childViewControllers[0] as? HMZDetailViewController
+        
+        masterVc?.foodTypeDelegate = detailVc
+        delegate = detailVc
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    
 }

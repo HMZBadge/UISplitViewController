@@ -52,6 +52,8 @@
 		DAD148CE1C3174BC009BB1C2 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD148BC1C3174BC009BB1C2 /* UIImageView+HighlightedWebCache.m */; };
 		DAD148CF1C3174BC009BB1C2 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD148BE1C3174BC009BB1C2 /* UIImageView+WebCache.m */; };
 		DAD148D01C3174BC009BB1C2 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD148C01C3174BC009BB1C2 /* UIView+WebCacheOperation.m */; };
+		DAD148D41C318D6D009BB1C2 /* Html in Resources */ = {isa = PBXBuildFile; fileRef = DAD148D31C318D6D009BB1C2 /* Html */; };
+		DAD148D61C318E42009BB1C2 /* HMZWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD148D51C318E42009BB1C2 /* HMZWebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -121,6 +123,8 @@
 		DAD148BE1C3174BC009BB1C2 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		DAD148BF1C3174BC009BB1C2 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		DAD148C01C3174BC009BB1C2 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		DAD148D31C318D6D009BB1C2 /* Html */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Html; sourceTree = "<group>"; };
+		DAD148D51C318E42009BB1C2 /* HMZWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMZWebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +169,7 @@
 				DA7DAD901C31195500C266A7 /* LaunchScreen.storyboard */,
 				DA7DAD931C31195500C266A7 /* Info.plist */,
 				DAD148861C3154DB009BB1C2 /* iPad-SplitViewController-Bridging-Header.h */,
+				DAD148D31C318D6D009BB1C2 /* Html */,
 			);
 			path = "iPad-SplitViewController";
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 		DAD1488C1C315A37009BB1C2 /* Compose */ = {
 			isa = PBXGroup;
 			children = (
+				DAD148D51C318E42009BB1C2 /* HMZWebViewController.swift */,
 			);
 			name = Compose;
 			sourceTree = "<group>";
@@ -344,6 +350,7 @@
 				DAD148751C311D61009BB1C2 /* type_10_foods.plist in Resources */,
 				DAD1487B1C311D61009BB1C2 /* type_16_foods.plist in Resources */,
 				DAD148801C311D61009BB1C2 /* type_5_foods.plist in Resources */,
+				DAD148D41C318D6D009BB1C2 /* Html in Resources */,
 				DAD1487A1C311D61009BB1C2 /* type_15_foods.plist in Resources */,
 				DAD1487E1C311D61009BB1C2 /* type_3_foods.plist in Resources */,
 				DAD148841C311D61009BB1C2 /* type_9_foods.plist in Resources */,
@@ -380,6 +387,7 @@
 				DAD148C31C3174BC009BB1C2 /* SDImageCache.m in Sources */,
 				DAD148901C315ABF009BB1C2 /* HMZSplitViewController.swift in Sources */,
 				DAD148981C316E24009BB1C2 /* HMZDetailViewController.swift in Sources */,
+				DAD148D61C318E42009BB1C2 /* HMZWebViewController.swift in Sources */,
 				DAD148CB1C3174BC009BB1C2 /* UIImage+GIF.m in Sources */,
 				DAD148C61C3174BC009BB1C2 /* SDWebImageDownloader.m in Sources */,
 				DAD148CF1C3174BC009BB1C2 /* UIImageView+WebCache.m in Sources */,
