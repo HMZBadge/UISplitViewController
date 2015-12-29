@@ -74,11 +74,85 @@
                             <outlet property="delegate" destination="HbS-Sb-iwo" id="w3c-eF-uM9"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="Fxu-4J-4UX"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="Fxu-4J-4UX">
+                        <barButtonItem key="rightBarButtonItem" title="Popover" id="Dob-6p-jYF">
+                            <connections>
+                                <segue destination="PIw-dd-eQ1" kind="push" id="eoY-j1-Ccj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uUq-Ox-LBU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1122" y="-2345"/>
+        </scene>
+        <!--Popover展示-->
+        <scene sceneID="HKI-Jx-EaN">
+            <objects>
+                <viewController id="PIw-dd-eQ1" customClass="HMZPopoverController" customModule="iPad_SplitViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xZe-tN-0a2"/>
+                        <viewControllerLayoutGuide type="bottom" id="VoC-eV-1KB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mVD-KJ-ClN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FoS-Vi-LM3">
+                                <rect key="frame" x="43" y="94" width="33" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="GJe-HH-q5F"/>
+                                    <constraint firstAttribute="width" constant="33" id="xJC-sg-KPv"/>
+                                </constraints>
+                                <state key="normal" title="test1"/>
+                                <connections>
+                                    <action selector="test1Click:" destination="PIw-dd-eQ1" eventType="touchUpInside" id="Leh-fy-vlT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWq-kQ-5dh">
+                                <rect key="frame" x="497" y="285" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="HDI-Od-aZr"/>
+                                    <constraint firstAttribute="width" constant="46" id="u6z-vt-IJi"/>
+                                </constraints>
+                                <state key="normal" title="test2"/>
+                                <connections>
+                                    <action selector="test2Click:" destination="PIw-dd-eQ1" eventType="touchUpInside" id="oFc-8E-sb8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="URj-fz-ZXh">
+                                <rect key="frame" x="30" y="550" width="36" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="52e-5k-MNT"/>
+                                    <constraint firstAttribute="width" constant="36" id="TCz-44-rT9"/>
+                                </constraints>
+                                <state key="normal" title="test3"/>
+                                <connections>
+                                    <action selector="test3Click:" destination="PIw-dd-eQ1" eventType="touchUpInside" id="iG2-w9-wed"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="URj-fz-ZXh" firstAttribute="leading" secondItem="mVD-KJ-ClN" secondAttribute="leading" constant="30" id="4wE-Na-yZ9"/>
+                            <constraint firstItem="FoS-Vi-LM3" firstAttribute="leading" secondItem="mVD-KJ-ClN" secondAttribute="leading" constant="43" id="cv9-P8-wUv"/>
+                            <constraint firstItem="VoC-eV-1KB" firstAttribute="top" secondItem="URj-fz-ZXh" secondAttribute="bottom" constant="20" id="dYb-T8-Khh"/>
+                            <constraint firstItem="FoS-Vi-LM3" firstAttribute="top" secondItem="xZe-tN-0a2" secondAttribute="bottom" constant="30" id="fjL-Dg-0wt"/>
+                            <constraint firstAttribute="trailing" secondItem="dWq-kQ-5dh" secondAttribute="trailing" constant="57" id="iIt-Cq-VVV"/>
+                            <constraint firstItem="dWq-kQ-5dh" firstAttribute="centerY" secondItem="mVD-KJ-ClN" secondAttribute="centerY" id="zwV-f9-pTb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Popover展示" id="qMY-YR-iQT">
+                        <barButtonItem key="rightBarButtonItem" title="test4" id="RBR-9N-Esi">
+                            <connections>
+                                <action selector="test4Click:" destination="PIw-dd-eQ1" id="DiK-Gg-xqa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7ZZ-yR-VDx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="313" y="-2537"/>
         </scene>
         <!--Detal-->
         <scene sceneID="9vw-qM-Krg">

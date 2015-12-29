@@ -18,5 +18,8 @@ class HMZSplitViewController: UISplitViewController {
         
         masterVc?.foodTypeDelegate = detailVc
         delegate = detailVc
+        
+        //手动调用一下屏幕旋转模式
+        detailVc?.splitViewController(self, willChangeToDisplayMode: .PrimaryHidden)
     }
 }

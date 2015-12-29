@@ -8,9 +8,7 @@
 
 import UIKit
 
-
 class HMZDetailViewController: UITableViewController {
-   
     var foodType: HMZFoodType? {
         didSet {
             foods = HMZFood.foods(foodType?.idstr ?? "1")
@@ -27,9 +25,12 @@ class HMZDetailViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "家常菜"
-        //tableView.registerClass(HMZFoodViewCell.self, forCellReuseIdentifier: cellID)
         tableView.rowHeight = 100
+        if !HMZCommon.share.isPad {
+            navigationItem.rightBarButtonItem?.enabled = false
+        }
     }
+    
 }
 
 // MARK: - Table view data source
@@ -61,6 +62,7 @@ extension HMZDetailViewController: HMZMasterViewControllerDelegate {
     }
 }
 
+// MARK: - UISplitViewControllerDelegate
 extension HMZDetailViewController: UISplitViewControllerDelegate {
     func splitViewController(svc: UISplitViewController, willChangeToDisplayMode displayMode: UISplitViewControllerDisplayMode) {
         /**
@@ -84,7 +86,7 @@ extension HMZDetailViewController: UISplitViewControllerDelegate {
             [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
             if (_centerController.view.frame.origin.x == self.view.frame.origin.x || _centerController.view.frame.origin.x == 100) {
             [_centerController.view setFrame:CGRectMake(_centerController.view.frame.origin.x-100, _centerController.view.frame.origin.y, _centerController.view.frame.size.width, _centerController.view.frame.size.height)];
-            } 
+            }
             
             [UIView commitAnimations];
             */
@@ -94,6 +96,6 @@ extension HMZDetailViewController: UISplitViewControllerDelegate {
             view.frame = CGRect(x: frame.origin.x + 320, y: frame.origin.y, width: frame.size.width, height: frame.size.height)
             UIView.commitAnimations()
         }
-        
     }
+    
 }

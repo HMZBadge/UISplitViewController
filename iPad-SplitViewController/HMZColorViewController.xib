@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HMZColorViewController" customModule="iPad_SplitViewController" customModuleProvider="target">
+            <connections>
+                <outlet property="colorWheelView" destination="6mF-bM-k9v" id="456-bv-TW1"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="225" height="250"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="colorWheel" translatesAutoresizingMaskIntoConstraints="NO" id="6mF-bM-k9v">
+                    <rect key="frame" x="0.0" y="0.0" width="225" height="250"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="6mF-bM-k9v" secondAttribute="trailing" id="LE7-G4-u0L"/>
+                <constraint firstItem="6mF-bM-k9v" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="RyQ-aa-GaX"/>
+                <constraint firstAttribute="bottom" secondItem="6mF-bM-k9v" secondAttribute="bottom" id="sHn-6i-jy4"/>
+                <constraint firstItem="6mF-bM-k9v" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="tUV-4t-Xjl"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="90.5" y="242"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="colorWheel" width="225" height="250"/>
+    </resources>
+</document>
